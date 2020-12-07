@@ -19,7 +19,7 @@ def main(argv: list() = sys.argv):
         PORT: int = int(config.get("default", "PORT"))
     except Exception as e:
         print(e)
-        PORT = 5000
+        PORT = 5252
 
     try:
         opts, _etc_args = getopt.getopt(argv[1:], "HRP:", ["reload", "PORT="])
