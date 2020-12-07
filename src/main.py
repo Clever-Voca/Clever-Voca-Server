@@ -22,7 +22,7 @@ def main(argv: list() = sys.argv):
         PORT = 5000
 
     try:
-        opts, etc_args = getopt.getopt(argv[1:], "HRP:", ["reload", "PORT="])
+        opts, _etc_args = getopt.getopt(argv[1:], "HRP:", ["reload", "PORT="])
 
     except getopt.GetoptError:
         print(FILE_NAME, "-R -P <Port Number>")
