@@ -1,7 +1,7 @@
 import uvicorn
 import sys, getopt
 
-from .app import app
+from app import app
 from configparser import ConfigParser
 
 

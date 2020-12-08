@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from fastapi_sqlalchemy import DBSessionMiddleware
 
-from model.Database import Base
+from model.Database.base import Base
 
 class DBSession(DBSessionMiddleware):
     def __init__(self, db_url=None, custom_engine=None, *args, **kwargs):

@@ -1,7 +1,8 @@
 from fastapi import APIRouter
 
-router = APIRouter()
+API = APIRouter()
 
-@router.post("/test")
-def test():
-    return "Clever Voca"
+
+@API.post("/module")
+def create_module():
+    return "created"

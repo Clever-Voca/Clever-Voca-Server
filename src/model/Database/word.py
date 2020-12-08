@@ -14,5 +14,6 @@ class Word(Base):
 
     def __init__(self, module_id, word, mean):
         self.module_id = module_id
+        self.word_num = word_num
         self.word = word
         self.mean = mean
