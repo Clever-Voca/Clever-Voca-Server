@@ -5,10 +5,10 @@ from middlewares.DBSession import DBSession
 from router.api import API
 
 config = configparser.ConfigParser()
-config.read("config.ini")
+config.read("../config.ini")
 
 app = FastAPI()
-app.add_middleware(DBSession, db_url=config.get("default", "DB_URL"))
+app.add_middleware(DBSession, db_url=config["DEFAULT"]["db_url"])
 
 @app.get("/test")
 def test():

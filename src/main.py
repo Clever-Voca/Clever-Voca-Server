@@ -16,7 +16,7 @@ def main(argv: list() = sys.argv):
     FILE_NAME = argv[0]
     reload  : str = "False"
     try:
-        PORT: int = int(config.get("default", "PORT"))
+        PORT: int = int(config.get("DEFAULT", "PORT"))
     except Exception as e:
         print(e)
         PORT = 5252
