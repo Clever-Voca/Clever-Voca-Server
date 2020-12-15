@@ -20,5 +20,3 @@ class Word(Base):
         self.word_num = word_num
         self.word = word
         self.mean = mean
-def create_word(id : int, word : str, mean : str):
-    return Word(id, word, mean)

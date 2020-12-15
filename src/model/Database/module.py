@@ -21,9 +21,4 @@ class Module(Base):
         self.module_name = module_name
         self.publisher = publisher
 
-def create_module(req : Request_module):
-    module = Module(req.module_name, req.publisher)
-    word = [create_word(module.module_id, i.word, i.mean)
-            for i in req.word]
-    
-    return 
+
