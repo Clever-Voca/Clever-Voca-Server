@@ -10,9 +10,11 @@ config.read("../config.ini")
 app = FastAPI()
 app.add_middleware(DBSession, db_url=config["DEFAULT"]["db_url"])
 
+
 @app.get("/test")
 def test():
     return "Clever Voca"
+
 
 app.include_router(
     API,
