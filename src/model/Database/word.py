@@ -11,7 +11,6 @@ class Word(Base):
     __tablename__ = "Word"
     word_id = Column(Integer, primary_key=True, autoincrement=True)
     module_id = Column(Integer, ForeignKey("Module.module_id"))
-    word_num = Column(Integer, nullable=False)
     word = Column(String(255), nullable=False)
     mean = Column(String(255), nullable=False)
 
@@ -19,6 +18,5 @@ class Word(Base):
 
     def __init__(self, module_id, word, mean):
         self.module_id = module_id
-        self.word_num = word_num
         self.word = word
         self.mean = mean

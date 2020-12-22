@@ -6,22 +6,35 @@ from pydantic import BaseModel
 from model.Schema.word import Word
 
 
-class Module(BaseModel):
 
+class init_module(BaseModel):
     module_name: str
     publisher: str
-
-
-class Request_module(Module):
     word: List[Word]
 
-    class Config:
-        orm_mode = True
 
+class Module(init_module):
 
-class Response_module(Request_module):
-    module_id: int
+    
     created_at: datetime
+    module_id: int
+
+
+class Response_module(BaseModel):
+    module : Module
+    word : List[Word]
 
     class Config:
         orm_mode = True
+
+
+class Modules(Module):
+    created_at: datetime
+    module_id: int
+
+    class Config:
+        orm_mode = True
+
+
+class ModuleList(BaseModel):
+    module: List[Modules]

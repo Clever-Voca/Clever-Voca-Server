@@ -1,16 +1,21 @@
 from fastapi import APIRouter
 
-from controller.controller import create_module, find_module
-from model.Schema.module import Request_module, Response_module
+from controller import module
+from model.Schema.module import init_module, Response_module, ModuleList
 
 API = APIRouter()
 
 
-@API.post("/module", response_model=Response_module)
-def new_module(req: Request_module):
-    return create_module(req)
+@API.post("/module")
+async def new_module(req: init_module):
+    return await module.create_module(req)
 
 
-@API.get("/module/list")
-def module_list(req: str = None):
-    return find_module(req)
+@API.get("/module/search")
+def module_search(q: str = ""):
+    return module.find_module(q)
+
+
+@API.get("/module/{id}")
+def get_module(id: int):
+    return module.get_module(id)
