@@ -7,6 +7,12 @@ pip install -r requirements.txt
 1. 파일을 클론이나 다운 후 파일에다가 넣어놓는다.
 2. 해당 경로로 찾아가 src/config.ini를 만들어준다.
     - MySQL DB_URL을 넣어주면 된다.
+    % 유의사항 %
+    (1. MySQL이 깔려있어야한다.
+     2. DB이름을 CV로 해서 생성해주어야한다.
+     3. mysql://root:[DB비번]@localhost:3306/[DB이름]?charset=utf8
+        이런식으로 mysql DB_URL을 작성해주어야한다.
+        utf-8 필수)
     ```ini
         [default]
         DB_URL = "your MYSQL DB URL"
