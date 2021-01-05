@@ -9,10 +9,11 @@ pip install -r requirements.txt
     - MySQL DB_URL을 넣어주면 된다.
     ```ini
         [default]
-        DB_URL = "your MYSQL DB URL"
+        DB_URL = "your MYSQL DB URL?charset=utf8"
         PORT = "you will write youn want port number"
     ```
-3. 실행을 해준다.
+3. 루트디렉터리에서 `pip install -r requirements.txt`를 실행해준다.
+4. 실행을 해준다.
     - python src/main.py -R(Reload option) -P (Port number)
         - 이때 -R이나 -P는 옵션이니 안넣어줘도 된다.    
 

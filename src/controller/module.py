@@ -39,7 +39,7 @@ async def create_module(req: init_module):
     }
 
 
-def find_module(search: str):
+async def find_module(search: str):
     con = db.session
 
     module_list = con.query(Module).filter(Module.module_name.like(f"%{search}%")).all()
@@ -47,7 +47,7 @@ def find_module(search: str):
     return module_list
 
 
-def get_module(id: int):
+async def get_module(id: int):
     con = db.session
     module = con.query(Module).filter(Module.module_id == id).first()
     word_list = con.query(Word).filter(Word.module_id == id).all()

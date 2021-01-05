@@ -12,10 +12,10 @@ async def new_module(req: init_module):
 
 
 @API.get("/module/search")
-def module_search(q: str = ""):
-    return module.find_module(q)
+async def module_search(q: str = ""):
+    return await module.find_module(q)
 
 
 @API.get("/module/{id}")
-def get_module(id: int):
-    return module.get_module(id)
+async def get_module(id: int):
+    return await module.get_module(id)
