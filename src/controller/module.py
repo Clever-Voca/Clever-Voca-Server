@@ -51,10 +51,8 @@ async def get_module(id: int):
     con = db.session
     module = con.query(Module).filter(Module.module_id == id).first()
     word_list = con.query(Word).filter(Word.module_id == id).all()
-    
+
     return {
-        "module": {
-            module
-        },
+        "module": {module},
         "word": word_list,
-    } 
+    }

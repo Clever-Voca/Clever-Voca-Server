@@ -6,7 +6,6 @@ from pydantic import BaseModel
 from model.Schema.word import Word
 
 
-
 class init_module(BaseModel):
     module_name: str
     publisher: str
@@ -15,14 +14,13 @@ class init_module(BaseModel):
 
 class Module(init_module):
 
-    
     created_at: datetime
     module_id: int
 
 
 class Response_module(BaseModel):
-    module : Module
-    word : List[Word]
+    module: Module
+    word: List[Word]
 
     class Config:
         orm_mode = True
