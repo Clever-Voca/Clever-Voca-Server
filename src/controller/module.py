@@ -44,7 +44,7 @@ async def find_module(search: str):
 
     module_list = con.query(Module).filter(Module.module_name.like(f"%{search}%")).all()
 
-    return module_list
+    return { "list" : module_list }
 
 
 async def get_module(id: int):
