@@ -4,7 +4,9 @@ from middlewares.DBSession import DBSession
 from router.api import API
 
 app = FastAPI()
-app.add_middleware(DBSession, db_url=open("../db_url.txt", mode="r").readline())
+file = open("db_url.txt", mode="r")
+app.add_middleware(DBSession, db_url=file.readline())
+file.close()
 
 
 @app.get("/test")
